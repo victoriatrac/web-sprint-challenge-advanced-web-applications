@@ -109,6 +109,19 @@ export const handlers = [
         );
     }
   }),
+
+  rest.post(`${urlBase}/logout`, (req, res, ctx) => {
+    // res.status(200).json({
+    //   payload: token
+    // })
+    return res(
+      ctx.status(200),
+      ctx.json({
+        payload: token
+      })
+    )
+  }),
+
   // Handles a GET /user request
   rest.get(`${urlBase}/colors`, (req, res, ctx) => {
     if (authenticator(req)) {
